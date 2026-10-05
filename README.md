@@ -31,7 +31,7 @@ Two data modes (`DATA_SOURCE` in `backend/.env`):
 - **live (current main path)**: a closed loop. `mock_server` simulates a small world where faults can be injected, `data_collector` collects data through two channels, and the backend scans periodically, produces a remediation checklist, and gets feedback from actions. A web console injects faults and confirms remediation.
 - **static (legacy demo, code default)**: a static dataset in `data/data`, collected once, with 11 pre-seeded risks.
 
-Full design: [architecture spec](docs/架构设计方案Spec.md) and [closed-loop spec](docs/闭环执行方案Spec.md). The full history of the Harness is in [docs/harness-改进方案.md](docs/harness-改进方案.md).
+Full design: [architecture spec](docs/架构设计方案Spec.md) and [closed-loop spec](docs/闭环执行方案Spec.md).
 
 > The `docs/` folder is written in Chinese. The most useful entry points are [docs/项目总览-业务与技术.md](docs/项目总览-业务与技术.md) (project overview: motivation, technical design, the ten Harness mechanisms) and [the final evaluation report](docs/量化评测报告-最终版.md).
 
@@ -143,4 +143,3 @@ This is not a demo-only prototype. Each Harness mechanism is backed by regressio
 - **Task plans and resumable runs**: `update_plan` tool with three gates (budget first → step limit → structured unfinished signal). Resuming resets the step count but never the budget
 - **Two fallbacks**: no API key → offline keyword routing; database unreachable → local SQLite
 
-For the complete Harness evolution log, including the real-model verification and key decisions at each step, see [docs/harness-改进方案.md](docs/harness-改进方案.md) (Chinese).

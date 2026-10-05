@@ -35,7 +35,6 @@
 - **static（遗留演示，代码默认值）**：静态数据集 `data/data`，一次性采集，11 条预埋风险对账演示
 
 完整设计见 [docs/架构设计方案Spec.md](docs/架构设计方案Spec.md) 与 [docs/闭环执行方案Spec.md](docs/闭环执行方案Spec.md)；
-Harness 演进全过程见 [docs/harness-改进方案.md](docs/harness-改进方案.md)。
 
 > 📊 **量化评测结果**见 [docs/量化评测报告.md](docs/量化评测报告.md)：
 > 12 个故障场景下风险扫描 P/R/F1 均 100%、零串报、负样本零误报；
@@ -156,5 +155,4 @@ cd frontend && npm run dev                                                 # 4. 
 - **任务清单与分段续跑**：`update_plan` 工具 + 三道闸门（预算优先 → 次数上限 → 结构化未完成信号），续跑只重置步数、绝不重置预算
 - **两道降级保底**：未配 API Key → 离线关键词路由；数据库连不上 → 自动降级本地 SQLite
 
-Harness 从 0 到当前的完整演进记录（含每一步的真机验证与重大决策）见 [docs/harness-改进方案.md](docs/harness-改进方案.md)。
 
