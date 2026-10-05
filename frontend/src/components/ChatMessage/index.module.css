@@ -1,0 +1,79 @@
+.row {
+  display: flex;
+  margin: 12px 0;
+}
+
+.rowUser {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 86%;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.bubbleUser {
+  background: var(--brand-color, #1664ff);
+  color: #ffffff;
+}
+
+.bubbleAssistant {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e5e6eb);
+  color: var(--text-primary, #1d2129);
+  width: 86%;
+}
+
+.markdown :global(p) {
+  margin: 4px 0;
+}
+
+.markdown :global(table) {
+  border-collapse: collapse;
+  margin: 8px 0;
+}
+
+.markdown :global(th),
+.markdown :global(td) {
+  border: 1px solid var(--border-color, #e5e6eb);
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.markdown :global(code) {
+  background: var(--bg-code, #f2f3f5);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 12px;
+}
+
+.cards {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.waiting {
+  color: var(--text-tertiary, #86909c);
+  font-size: 12px;
+}
+
+/* —— 事实核对告警（E-4）：放在回答上方，是对结论可信度的限定 —— */
+.verify {
+  margin: 8px 0;
+}
+
+.verifyBody {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.verifyNote {
+  color: var(--text-secondary, #4e5969);
+  margin-top: 4px;
+  word-break: break-all;
+}

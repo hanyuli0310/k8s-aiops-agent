@@ -1,0 +1,2146 @@
+{
+  "generated_at": "2026-08-03T11:50:00Z",
+  "cluster": {
+    "name": "prod-cluster-01",
+    "k8s_version": "1.28",
+    "kubelet_version": "v1.28.9-aliyun.1",
+    "region": "cn-hangzhou",
+    "user_id": "1208863178610000"
+  },
+  "nodes": {
+    "apiVersion": "v1",
+    "kind": "List",
+    "items": [
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "name": "node-01",
+          "uid": "bdd640fb-0667-4ad1-9c80-317fa3b1799d",
+          "creationTimestamp": "2026-05-05T11:50:00Z",
+          "labels": {
+            "kubernetes.io/hostname": "node-01",
+            "kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "amd64",
+            "topology.kubernetes.io/region": "cn-hangzhou",
+            "topology.kubernetes.io/zone": "cn-hangzhou-h",
+            "node.kubernetes.io/instance-type": "ecs.g6.xlarge"
+          }
+        },
+        "status": {
+          "capacity": {
+            "cpu": "4",
+            "memory": "8Gi",
+            "pods": "64"
+          },
+          "allocatable": {
+            "cpu": "3900m",
+            "memory": "7680Mi",
+            "pods": "64"
+          },
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "reason": "KubeletReady",
+              "message": "kubelet is posting ready status",
+              "lastTransitionTime": "2026-05-05T11:50:00Z"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "InternalIP",
+              "address": "192.168.0.11"
+            },
+            {
+              "type": "Hostname",
+              "address": "node-01"
+            }
+          ],
+          "nodeInfo": {
+            "kubeletVersion": "v1.28.9-aliyun.1",
+            "containerRuntimeVersion": "containerd://1.6.28",
+            "osImage": "Alibaba Cloud Linux 3",
+            "architecture": "amd64"
+          }
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "name": "node-02",
+          "uid": "23b8c1e9-3924-46de-beb1-3b9046685257",
+          "creationTimestamp": "2026-05-05T11:50:00Z",
+          "labels": {
+            "kubernetes.io/hostname": "node-02",
+            "kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "amd64",
+            "topology.kubernetes.io/region": "cn-hangzhou",
+            "topology.kubernetes.io/zone": "cn-hangzhou-h",
+            "node.kubernetes.io/instance-type": "ecs.g6.xlarge"
+          }
+        },
+        "status": {
+          "capacity": {
+            "cpu": "4",
+            "memory": "8Gi",
+            "pods": "64"
+          },
+          "allocatable": {
+            "cpu": "3900m",
+            "memory": "7680Mi",
+            "pods": "64"
+          },
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "reason": "KubeletReady",
+              "message": "kubelet is posting ready status",
+              "lastTransitionTime": "2026-05-05T11:50:00Z"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "InternalIP",
+              "address": "192.168.0.12"
+            },
+            {
+              "type": "Hostname",
+              "address": "node-02"
+            }
+          ],
+          "nodeInfo": {
+            "kubeletVersion": "v1.28.9-aliyun.1",
+            "containerRuntimeVersion": "containerd://1.6.28",
+            "osImage": "Alibaba Cloud Linux 3",
+            "architecture": "amd64"
+          }
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "name": "node-03",
+          "uid": "bd9c66b3-ad3c-4d6d-9a3d-1fa7bc8960a9",
+          "creationTimestamp": "2026-05-05T11:50:00Z",
+          "labels": {
+            "kubernetes.io/hostname": "node-03",
+            "kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "amd64",
+            "topology.kubernetes.io/region": "cn-hangzhou",
+            "topology.kubernetes.io/zone": "cn-hangzhou-i",
+            "node.kubernetes.io/instance-type": "ecs.g6.xlarge"
+          }
+        },
+        "status": {
+          "capacity": {
+            "cpu": "4",
+            "memory": "8Gi",
+            "pods": "64"
+          },
+          "allocatable": {
+            "cpu": "3900m",
+            "memory": "7680Mi",
+            "pods": "64"
+          },
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "reason": "KubeletReady",
+              "message": "kubelet is posting ready status",
+              "lastTransitionTime": "2026-05-05T11:50:00Z"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "InternalIP",
+              "address": "192.168.0.13"
+            },
+            {
+              "type": "Hostname",
+              "address": "node-03"
+            }
+          ],
+          "nodeInfo": {
+            "kubeletVersion": "v1.28.9-aliyun.1",
+            "containerRuntimeVersion": "containerd://1.6.28",
+            "osImage": "Alibaba Cloud Linux 3",
+            "architecture": "amd64"
+          }
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "name": "node-04",
+          "uid": "972a8469-1641-4f82-8b9d-2434e465e150",
+          "creationTimestamp": "2026-05-05T11:50:00Z",
+          "labels": {
+            "kubernetes.io/hostname": "node-04",
+            "kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "amd64",
+            "topology.kubernetes.io/region": "cn-hangzhou",
+            "topology.kubernetes.io/zone": "cn-hangzhou-i",
+            "node.kubernetes.io/instance-type": "ecs.g6.xlarge"
+          }
+        },
+        "status": {
+          "capacity": {
+            "cpu": "4",
+            "memory": "8Gi",
+            "pods": "64"
+          },
+          "allocatable": {
+            "cpu": "3900m",
+            "memory": "7680Mi",
+            "pods": "64"
+          },
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "reason": "KubeletReady",
+              "message": "kubelet is posting ready status",
+              "lastTransitionTime": "2026-05-05T11:50:00Z"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "InternalIP",
+              "address": "192.168.0.14"
+            },
+            {
+              "type": "Hostname",
+              "address": "node-04"
+            }
+          ],
+          "nodeInfo": {
+            "kubeletVersion": "v1.28.9-aliyun.1",
+            "containerRuntimeVersion": "containerd://1.6.28",
+            "osImage": "Alibaba Cloud Linux 3",
+            "architecture": "amd64"
+          }
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "name": "node-05",
+          "uid": "17fc695a-07a0-4a6e-8822-e8f36c031199",
+          "creationTimestamp": "2026-05-05T11:50:00Z",
+          "labels": {
+            "kubernetes.io/hostname": "node-05",
+            "kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "amd64",
+            "topology.kubernetes.io/region": "cn-hangzhou",
+            "topology.kubernetes.io/zone": "cn-hangzhou-j",
+            "node.kubernetes.io/instance-type": "ecs.g6.xlarge"
+          }
+        },
+        "status": {
+          "capacity": {
+            "cpu": "4",
+            "memory": "8Gi",
+            "pods": "64"
+          },
+          "allocatable": {
+            "cpu": "3900m",
+            "memory": "7680Mi",
+            "pods": "64"
+          },
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "reason": "KubeletReady",
+              "message": "kubelet is posting ready status",
+              "lastTransitionTime": "2026-05-05T11:50:00Z"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "InternalIP",
+              "address": "192.168.0.15"
+            },
+            {
+              "type": "Hostname",
+              "address": "node-05"
+            }
+          ],
+          "nodeInfo": {
+            "kubeletVersion": "v1.28.9-aliyun.1",
+            "containerRuntimeVersion": "containerd://1.6.28",
+            "osImage": "Alibaba Cloud Linux 3",
+            "architecture": "amd64"
+          }
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "name": "node-06",
+          "uid": "9a1de644-815e-46d1-bb8f-aa1837f8a88b",
+          "creationTimestamp": "2026-05-05T11:50:00Z",
+          "labels": {
+            "kubernetes.io/hostname": "node-06",
+            "kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "amd64",
+            "topology.kubernetes.io/region": "cn-hangzhou",
+            "topology.kubernetes.io/zone": "cn-hangzhou-j",
+            "node.kubernetes.io/instance-type": "ecs.g6.xlarge"
+          }
+        },
+        "status": {
+          "capacity": {
+            "cpu": "4",
+            "memory": "8Gi",
+            "pods": "64"
+          },
+          "allocatable": {
+            "cpu": "3900m",
+            "memory": "7680Mi",
+            "pods": "64"
+          },
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "reason": "KubeletReady",
+              "message": "kubelet is posting ready status",
+              "lastTransitionTime": "2026-05-05T11:50:00Z"
+            }
+          ],
+          "addresses": [
+            {
+              "type": "InternalIP",
+              "address": "192.168.0.16"
+            },
+            {
+              "type": "Hostname",
+              "address": "node-06"
+            }
+          ],
+          "nodeInfo": {
+            "kubeletVersion": "v1.28.9-aliyun.1",
+            "containerRuntimeVersion": "containerd://1.6.28",
+            "osImage": "Alibaba Cloud Linux 3",
+            "architecture": "amd64"
+          }
+        }
+      }
+    ]
+  },
+  "deployments": {
+    "apiVersion": "apps/v1",
+    "kind": "List",
+    "items": [
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "payment-service",
+          "namespace": "default",
+          "uid": "b74d0fb1-32e7-4629-8fad-c1a606cb0fb3",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "payment-service",
+            "version": "v2.3.1"
+          }
+        },
+        "spec": {
+          "replicas": 3,
+          "selector": {
+            "matchLabels": {
+              "app": "payment-service"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "payment-service",
+                "version": "v2.3.1"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "payment-service",
+                  "image": "registry.cn-hangzhou.aliyuncs.com/acme/payment-service:v2.3.1",
+                  "imagePullPolicy": "IfNotPresent",
+                  "ports": [
+                    {
+                      "containerPort": 8080,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "500m",
+                      "memory": "512Mi"
+                    },
+                    "limits": {
+                      "cpu": "4"
+                    }
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/healthz",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 15,
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  },
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/readyz",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 10,
+                    "periodSeconds": 5,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  }
+                }
+              ],
+              "affinity": {
+                "nodeAffinity": {
+                  "requiredDuringSchedulingIgnoredDuringExecution": {
+                    "nodeSelectorTerms": [
+                      {
+                        "matchExpressions": [
+                          {
+                            "key": "topology.kubernetes.io/zone",
+                            "operator": "In",
+                            "values": [
+                              "cn-hangzhou-h"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "status": {
+          "replicas": 3,
+          "readyReplicas": 3,
+          "availableReplicas": 3,
+          "updatedReplicas": 3
+        }
+      },
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "order-service",
+          "namespace": "default",
+          "uid": "1a2a73ed-562b-4f79-8374-59eef50bea63",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "order-service",
+            "version": "v1.8.4"
+          }
+        },
+        "spec": {
+          "replicas": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "order-service"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "order-service",
+                "version": "v1.8.4"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "order-service",
+                  "image": "registry.cn-hangzhou.aliyuncs.com/acme/order-service:v1.8.4",
+                  "imagePullPolicy": "IfNotPresent",
+                  "ports": [
+                    {
+                      "containerPort": 8080,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "500m",
+                      "memory": "512Mi"
+                    },
+                    "limits": {
+                      "cpu": "4",
+                      "memory": "2Gi"
+                    }
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/healthz",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 15,
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  },
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/readyz",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 10,
+                    "periodSeconds": 5,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "replicas": 1,
+          "readyReplicas": 1,
+          "availableReplicas": 1,
+          "updatedReplicas": 1
+        }
+      },
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "user-service",
+          "namespace": "default",
+          "uid": "ec1b8ca1-f91e-4d4c-9ff4-9b7889463e85",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "user-service",
+            "version": "v3.1.0"
+          }
+        },
+        "spec": {
+          "replicas": 2,
+          "selector": {
+            "matchLabels": {
+              "app": "user-service"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "user-service",
+                "version": "v3.1.0"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "user-service",
+                  "image": "registry.cn-hangzhou.aliyuncs.com/acme/user-service:v3.1.0",
+                  "imagePullPolicy": "IfNotPresent",
+                  "ports": [
+                    {
+                      "containerPort": 8080,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "250m",
+                      "memory": "512Mi"
+                    },
+                    "limits": {
+                      "cpu": "4",
+                      "memory": "2Gi"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "replicas": 2,
+          "readyReplicas": 2,
+          "availableReplicas": 2,
+          "updatedReplicas": 2
+        }
+      },
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "api-gateway",
+          "namespace": "default",
+          "uid": "fc377a4c-4a15-444d-85e7-ce8a3a578a8e",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "api-gateway",
+            "version": "v2.0.7"
+          }
+        },
+        "spec": {
+          "replicas": 2,
+          "selector": {
+            "matchLabels": {
+              "app": "api-gateway"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "api-gateway",
+                "version": "v2.0.7"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "api-gateway",
+                  "image": "registry.cn-hangzhou.aliyuncs.com/acme/api-gateway:v2.0.7",
+                  "imagePullPolicy": "IfNotPresent",
+                  "ports": [
+                    {
+                      "containerPort": 8080,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "memory": "512Mi"
+                    },
+                    "limits": {
+                      "cpu": "4",
+                      "memory": "2Gi"
+                    }
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/healthz",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 15,
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  },
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/readyz",
+                      "port": 8080,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 10,
+                    "periodSeconds": 5,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "replicas": 2,
+          "readyReplicas": 2,
+          "availableReplicas": 2,
+          "updatedReplicas": 2
+        }
+      },
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "frontend",
+          "namespace": "default",
+          "uid": "aefcfad8-efc8-4849-b3aa-7efe4458a885",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "frontend",
+            "version": "v4.2.5"
+          }
+        },
+        "spec": {
+          "replicas": 2,
+          "selector": {
+            "matchLabels": {
+              "app": "frontend"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "frontend",
+                "version": "v4.2.5"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "frontend",
+                  "image": "registry.cn-hangzhou.aliyuncs.com/acme/frontend:v4.2.5",
+                  "imagePullPolicy": "IfNotPresent",
+                  "ports": [
+                    {
+                      "containerPort": 80,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "250m",
+                      "memory": "256Mi"
+                    },
+                    "limits": {
+                      "cpu": "3650m",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/healthz",
+                      "port": 80,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 15,
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  },
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/readyz",
+                      "port": 80,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 10,
+                    "periodSeconds": 5,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "replicas": 2,
+          "readyReplicas": 2,
+          "availableReplicas": 2,
+          "updatedReplicas": 2
+        }
+      },
+      {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+          "name": "nginx-ingress",
+          "namespace": "kube-system",
+          "uid": "b02b61c4-a3d7-4628-ace6-6fa2fd5166e6",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "nginx-ingress",
+            "version": "v1.9.6"
+          }
+        },
+        "spec": {
+          "replicas": 2,
+          "selector": {
+            "matchLabels": {
+              "app": "nginx-ingress"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "nginx-ingress",
+                "version": "v1.9.6"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "nginx-ingress",
+                  "image": "registry.cn-hangzhou.aliyuncs.com/acs/nginx-ingress-controller:v1.9.6",
+                  "imagePullPolicy": "IfNotPresent",
+                  "ports": [
+                    {
+                      "containerPort": 80,
+                      "protocol": "TCP"
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "500m",
+                      "memory": "512Mi"
+                    },
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "1Gi"
+                    }
+                  },
+                  "livenessProbe": {
+                    "httpGet": {
+                      "path": "/healthz",
+                      "port": 80,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 15,
+                    "periodSeconds": 10,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  },
+                  "readinessProbe": {
+                    "httpGet": {
+                      "path": "/readyz",
+                      "port": 80,
+                      "scheme": "HTTP"
+                    },
+                    "initialDelaySeconds": 10,
+                    "periodSeconds": 5,
+                    "timeoutSeconds": 3,
+                    "failureThreshold": 3
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "status": {
+          "replicas": 2,
+          "readyReplicas": 2,
+          "availableReplicas": 2,
+          "updatedReplicas": 2
+        }
+      }
+    ]
+  },
+  "pods": {
+    "apiVersion": "v1",
+    "kind": "List",
+    "items": [
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "payment-service-7f9c6bd8d-x2k4q",
+          "namespace": "default",
+          "uid": "6b65a6a4-8b81-48f6-b38a-088ca65ed389",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "payment-service",
+            "version": "v2.3.1"
+          }
+        },
+        "spec": {
+          "nodeName": "node-01",
+          "containers": [
+            {
+              "name": "payment-service",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/payment-service:v2.3.1",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "500m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.1.10",
+          "hostIP": "192.168.0.11",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "payment-service",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/payment-service:v2.3.1",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "payment-service-7f9c6bd8d-m8q1w",
+          "namespace": "default",
+          "uid": "47378190-96da-4dac-b2ff-5d2a386ecbe0",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "payment-service",
+            "version": "v2.3.1"
+          }
+        },
+        "spec": {
+          "nodeName": "node-01",
+          "containers": [
+            {
+              "name": "payment-service",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/payment-service:v2.3.1",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "500m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.1.11",
+          "hostIP": "192.168.0.11",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "payment-service",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/payment-service:v2.3.1",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "payment-service-7f9c6bd8d-t5r7c",
+          "namespace": "default",
+          "uid": "c241330b-01a9-471f-9e8a-774bcf36d58b",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "payment-service",
+            "version": "v2.3.1"
+          }
+        },
+        "spec": {
+          "nodeName": "node-02",
+          "containers": [
+            {
+              "name": "payment-service",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/payment-service:v2.3.1",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "500m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.2.10",
+          "hostIP": "192.168.0.12",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "payment-service",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/payment-service:v2.3.1",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "order-service-5d8b9c7f6-a1b2c",
+          "namespace": "default",
+          "uid": "5be6128e-18c2-4797-a142-ea7d17be3111",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "order-service",
+            "version": "v1.8.4"
+          }
+        },
+        "spec": {
+          "nodeName": "node-03",
+          "containers": [
+            {
+              "name": "order-service",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/order-service:v1.8.4",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "500m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4",
+                  "memory": "2Gi"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.3.10",
+          "hostIP": "192.168.0.13",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "order-service",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/order-service:v1.8.4",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "user-service-6c7d8e9f5-c3d4e",
+          "namespace": "default",
+          "uid": "4b0dbb41-8d52-48f1-942c-3fe860e7a113",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "user-service",
+            "version": "v3.1.0"
+          }
+        },
+        "spec": {
+          "nodeName": "node-03",
+          "containers": [
+            {
+              "name": "user-service",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/user-service:v3.1.0",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "250m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4",
+                  "memory": "2Gi"
+                }
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.3.11",
+          "hostIP": "192.168.0.13",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "user-service",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/user-service:v3.1.0",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "user-service-6c7d8e9f5-f6g7h",
+          "namespace": "default",
+          "uid": "e2acf72f-9e57-4f7a-a0ee-89aed453dd32",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "user-service",
+            "version": "v3.1.0"
+          }
+        },
+        "spec": {
+          "nodeName": "node-05",
+          "containers": [
+            {
+              "name": "user-service",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/user-service:v3.1.0",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "250m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4",
+                  "memory": "2Gi"
+                }
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.5.10",
+          "hostIP": "192.168.0.15",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "user-service",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/user-service:v3.1.0",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "api-gateway-4a5b6c7d8-g7h8i",
+          "namespace": "default",
+          "uid": "ddd1dfb2-3b98-4ef8-9af6-1a26146d3f31",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "api-gateway",
+            "version": "v2.0.7"
+          }
+        },
+        "spec": {
+          "nodeName": "node-04",
+          "containers": [
+            {
+              "name": "api-gateway",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/api-gateway:v2.0.7",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4",
+                  "memory": "2Gi"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.4.10",
+          "hostIP": "192.168.0.14",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "api-gateway",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/api-gateway:v2.0.7",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "api-gateway-4a5b6c7d8-j9k1l",
+          "namespace": "default",
+          "uid": "7412b293-4729-4739-a14f-f3d719db3ad0",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "api-gateway",
+            "version": "v2.0.7"
+          }
+        },
+        "spec": {
+          "nodeName": "node-06",
+          "containers": [
+            {
+              "name": "api-gateway",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/api-gateway:v2.0.7",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "4",
+                  "memory": "2Gi"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 8080,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.6.10",
+          "hostIP": "192.168.0.16",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "api-gateway",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/api-gateway:v2.0.7",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "frontend-9e8d7c6b5-n2p4r",
+          "namespace": "default",
+          "uid": "a28defe3-9bf0-4273-9247-6f57a5e5a5ab",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "frontend",
+            "version": "v4.2.5"
+          }
+        },
+        "spec": {
+          "nodeName": "node-05",
+          "containers": [
+            {
+              "name": "frontend",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/frontend:v4.2.5",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "250m",
+                  "memory": "256Mi"
+                },
+                "limits": {
+                  "cpu": "3650m",
+                  "memory": "1Gi"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.5.11",
+          "hostIP": "192.168.0.15",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "frontend",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/frontend:v4.2.5",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "frontend-9e8d7c6b5-q5s7t",
+          "namespace": "default",
+          "uid": "3eabedcb-baa8-4dd4-88bd-64072bcfbe01",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "frontend",
+            "version": "v4.2.5"
+          }
+        },
+        "spec": {
+          "nodeName": "node-01",
+          "containers": [
+            {
+              "name": "frontend",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/frontend:v4.2.5",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "250m",
+                  "memory": "256Mi"
+                },
+                "limits": {
+                  "cpu": "3650m",
+                  "memory": "1Gi"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.1.12",
+          "hostIP": "192.168.0.11",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "frontend",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acme/frontend:v4.2.5",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "nginx-ingress-8b7a6f5e4-v3w5x",
+          "namespace": "kube-system",
+          "uid": "5304317f-af42-412f-b838-b3268e944239",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "nginx-ingress",
+            "version": "v1.9.6"
+          }
+        },
+        "spec": {
+          "nodeName": "node-02",
+          "containers": [
+            {
+              "name": "nginx-ingress",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acs/nginx-ingress-controller:v1.9.6",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "500m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "1",
+                  "memory": "1Gi"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.2.11",
+          "hostIP": "192.168.0.12",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "nginx-ingress",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acs/nginx-ingress-controller:v1.9.6",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "metadata": {
+          "name": "nginx-ingress-8b7a6f5e4-y7z9a",
+          "namespace": "kube-system",
+          "uid": "0e51f30d-c6a7-4e39-84b0-32ccd7c524a5",
+          "creationTimestamp": "2026-07-31T11:50:00Z",
+          "labels": {
+            "app": "nginx-ingress",
+            "version": "v1.9.6"
+          }
+        },
+        "spec": {
+          "nodeName": "node-04",
+          "containers": [
+            {
+              "name": "nginx-ingress",
+              "image": "registry.cn-hangzhou.aliyuncs.com/acs/nginx-ingress-controller:v1.9.6",
+              "imagePullPolicy": "IfNotPresent",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "cpu": "500m",
+                  "memory": "512Mi"
+                },
+                "limits": {
+                  "cpu": "1",
+                  "memory": "1Gi"
+                }
+              },
+              "livenessProbe": {
+                "httpGet": {
+                  "path": "/healthz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 15,
+                "periodSeconds": 10,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              },
+              "readinessProbe": {
+                "httpGet": {
+                  "path": "/readyz",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 5,
+                "timeoutSeconds": 3,
+                "failureThreshold": 3
+              }
+            }
+          ]
+        },
+        "status": {
+          "phase": "Running",
+          "podIP": "10.244.4.11",
+          "hostIP": "192.168.0.14",
+          "startTime": "2026-07-31T11:50:00Z",
+          "conditions": [
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastTransitionTime": "2026-07-31T11:50:00Z"
+            }
+          ],
+          "containerStatuses": [
+            {
+              "name": "nginx-ingress",
+              "ready": true,
+              "restartCount": 0,
+              "image": "registry.cn-hangzhou.aliyuncs.com/acs/nginx-ingress-controller:v1.9.6",
+              "state": {
+                "running": {
+                  "startedAt": "2026-07-31T11:50:00Z"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "services": {
+    "apiVersion": "v1",
+    "kind": "List",
+    "items": [
+      {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "payment-service",
+          "namespace": "default",
+          "uid": "6c307511-b2b9-437a-a8df-6ec4ce4a2bbd",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "payment-service"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "clusterIP": "10.96.0.10",
+          "selector": {
+            "app": "payment-service"
+          },
+          "ports": [
+            {
+              "port": 8080,
+              "targetPort": 8080,
+              "protocol": "TCP"
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "order-service",
+          "namespace": "default",
+          "uid": "43b7a3a6-9a8d-4a03-980d-7b71d8f56413",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "order-service"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "clusterIP": "10.96.0.11",
+          "selector": {
+            "app": "order-service"
+          },
+          "ports": [
+            {
+              "port": 8080,
+              "targetPort": 8080,
+              "protocol": "TCP"
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "user-service",
+          "namespace": "default",
+          "uid": "3139d32c-93cd-49bf-9c94-1cf0dc98d2c1",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "user-service"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "clusterIP": "10.96.0.12",
+          "selector": {
+            "app": "user-service"
+          },
+          "ports": [
+            {
+              "port": 8080,
+              "targetPort": 8080,
+              "protocol": "TCP"
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "api-gateway",
+          "namespace": "default",
+          "uid": "29a3b2e9-5d65-4441-9588-42dea2bc372f",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "api-gateway"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "clusterIP": "10.96.0.13",
+          "selector": {
+            "app": "api-gateway"
+          },
+          "ports": [
+            {
+              "port": 8080,
+              "targetPort": 8080,
+              "protocol": "TCP"
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "frontend",
+          "namespace": "default",
+          "uid": "451b4cf3-6123-4df7-b656-af7229d4beef",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "frontend"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "clusterIP": "10.96.0.14",
+          "selector": {
+            "app": "frontend"
+          },
+          "ports": [
+            {
+              "port": 80,
+              "targetPort": 80,
+              "protocol": "TCP"
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "metadata": {
+          "name": "nginx-ingress",
+          "namespace": "kube-system",
+          "uid": "ce177b4e-0837-48a3-9261-a7ab3aa2e4f9",
+          "creationTimestamp": "2026-07-04T11:50:00Z",
+          "labels": {
+            "app": "nginx-ingress"
+          }
+        },
+        "spec": {
+          "type": "ClusterIP",
+          "clusterIP": "10.96.0.15",
+          "selector": {
+            "app": "nginx-ingress"
+          },
+          "ports": [
+            {
+              "port": 80,
+              "targetPort": 80,
+              "protocol": "TCP"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "poddisruptionbudgets": {
+    "apiVersion": "policy/v1",
+    "kind": "List",
+    "items": [
+      {
+        "apiVersion": "policy/v1",
+        "kind": "PodDisruptionBudget",
+        "metadata": {
+          "name": "payment-service-pdb",
+          "namespace": "default",
+          "uid": "371ecd7b-27cd-4130-8722-9389571aa876",
+          "creationTimestamp": "2026-07-04T11:50:00Z"
+        },
+        "spec": {
+          "minAvailable": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "payment-service"
+            }
+          }
+        },
+        "status": {
+          "currentHealthy": 3,
+          "desiredHealthy": 1,
+          "expectedPods": 3,
+          "disruptionsAllowed": 2
+        }
+      },
+      {
+        "apiVersion": "policy/v1",
+        "kind": "PodDisruptionBudget",
+        "metadata": {
+          "name": "order-service-pdb",
+          "namespace": "default",
+          "uid": "759cde66-bacf-43d0-8b1f-9163ce9ff57f",
+          "creationTimestamp": "2026-07-04T11:50:00Z"
+        },
+        "spec": {
+          "minAvailable": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "order-service"
+            }
+          }
+        },
+        "status": {
+          "currentHealthy": 1,
+          "desiredHealthy": 1,
+          "expectedPods": 1,
+          "disruptionsAllowed": 0
+        }
+      },
+      {
+        "apiVersion": "policy/v1",
+        "kind": "PodDisruptionBudget",
+        "metadata": {
+          "name": "user-service-pdb",
+          "namespace": "default",
+          "uid": "a9488d99-0bbb-4599-91ce-5dd2b45ed1f0",
+          "creationTimestamp": "2026-07-04T11:50:00Z"
+        },
+        "spec": {
+          "minAvailable": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "user-service"
+            }
+          }
+        },
+        "status": {
+          "currentHealthy": 2,
+          "desiredHealthy": 1,
+          "expectedPods": 2,
+          "disruptionsAllowed": 1
+        }
+      },
+      {
+        "apiVersion": "policy/v1",
+        "kind": "PodDisruptionBudget",
+        "metadata": {
+          "name": "api-gateway-pdb",
+          "namespace": "default",
+          "uid": "ab9099a4-35a2-40ae-9af3-05535ec42e08",
+          "creationTimestamp": "2026-07-04T11:50:00Z"
+        },
+        "spec": {
+          "minAvailable": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "api-gateway"
+            }
+          }
+        },
+        "status": {
+          "currentHealthy": 2,
+          "desiredHealthy": 1,
+          "expectedPods": 2,
+          "disruptionsAllowed": 1
+        }
+      },
+      {
+        "apiVersion": "policy/v1",
+        "kind": "PodDisruptionBudget",
+        "metadata": {
+          "name": "nginx-ingress-pdb",
+          "namespace": "kube-system",
+          "uid": "10f1bc81-448a-4a9e-a6b2-bc5b50c187fc",
+          "creationTimestamp": "2026-07-04T11:50:00Z"
+        },
+        "spec": {
+          "minAvailable": 1,
+          "selector": {
+            "matchLabels": {
+              "app": "nginx-ingress"
+            }
+          }
+        },
+        "status": {
+          "currentHealthy": 2,
+          "desiredHealthy": 1,
+          "expectedPods": 2,
+          "disruptionsAllowed": 1
+        }
+      }
+    ]
+  }
+}

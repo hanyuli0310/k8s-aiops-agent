@@ -1,0 +1,148 @@
+.timeline {
+  margin: 8px 0;
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 8px;
+  background: var(--bg-subtle, #f7f8fa);
+  overflow: hidden;
+}
+
+.header {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.body {
+  padding: 4px 12px 10px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.step {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.stepIcon {
+  flex: none;
+  width: 18px;
+  text-align: center;
+}
+
+.stepBody {
+  flex: 1;
+  min-width: 0;
+  word-break: break-all;
+}
+
+.toolName {
+  font-weight: 600;
+  color: var(--brand-color, #1664ff);
+}
+
+.argsText {
+  color: var(--text-tertiary, #86909c);
+}
+
+.resultText {
+  color: var(--text-secondary, #4e5969);
+  background: var(--bg-code, #eef1f6);
+  border-radius: 4px;
+  padding: 2px 6px;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+.thinking {
+  color: var(--text-tertiary, #86909c);
+  font-style: italic;
+}
+
+/* —— 权限门禁 / 自愈 / 中断 相关步骤 —— */
+
+.permission {
+  color: var(--warning-text, #d46b08);
+  font-weight: 600;
+}
+
+.dangerTag {
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--danger-color, #f5222d);
+  background: var(--danger-bg, #fff1f0);
+  border: 1px solid var(--danger-border, #ffa39e);
+  border-radius: 4px;
+  padding: 0 5px;
+}
+
+.granted {
+  color: var(--success-text, #389e0d);
+}
+
+.aborted {
+  color: var(--text-secondary, #4e5969);
+  font-weight: 600;
+}
+
+.notice {
+  color: var(--warning-text, #d46b08);
+}
+
+
+/* 子 Agent 透传的步骤：缩进一级并标注归属，与主 Agent 步骤区分 */
+.stepNested {
+  margin-left: 18px;
+  padding-left: 8px;
+  border-left: 2px solid var(--border-color, #e5e6eb);
+}
+
+.subagentTag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 5px;
+  font-size: 11px;
+  color: var(--brand-color, #1664ff);
+  background: var(--brand-bg, #eef3ff);
+  border-radius: 4px;
+}
+
+/* —— 任务清单（E-2）：一行一步，紧凑排布，不抢主轨迹的视觉权重 —— */
+.planList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.planStep {
+  font-size: 12px;
+  line-height: 1.6;
+  padding-left: 2px;
+}
+
+.done {
+  color: var(--text-tertiary, #86909c);
+  text-decoration: line-through;
+}
+
+.in_progress {
+  color: var(--brand-color, #1664ff);
+  font-weight: 600;
+}
+
+.pending {
+  color: var(--text-secondary, #4e5969);
+}

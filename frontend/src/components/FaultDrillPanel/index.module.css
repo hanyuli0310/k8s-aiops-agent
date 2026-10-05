@@ -1,0 +1,91 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 16px;
+}
+
+.section {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scenarioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.scenarioCard {
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.scenarioTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+}
+
+.scenarioDesc {
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.scenarioFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.activeFault {
+  border: 1px solid #ffccc7;
+  background: #fff2f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.worldMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+}
+
+.svcTable {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 6px;
+}
+
+.svcItem {
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: var(--bg-subtle, #f7f8fa);
+  display: flex;
+  justify-content: space-between;
+}

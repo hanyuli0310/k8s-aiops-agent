@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "generator_version": "world-1.0.0",
+    "generated_at": "2026-08-03T11:50:00Z",
+    "seed": 42,
+    "end_ts_ms": 1785757800000,
+    "cms_window": {
+      "from_ms": 1785754200000,
+      "to_ms": 1785757800000,
+      "period_sec": 60
+    },
+    "log_window": {
+      "from_s": 1785756000,
+      "to_s": 1785757800
+    },
+    "cluster": "prod-cluster-01",
+    "region": "cn-hangzhou",
+    "userId": "1208863178610000",
+    "files": [
+      {
+        "name": "k8s_resources.json",
+        "lines": 2146,
+        "entries": 35,
+        "bytes": 62197,
+        "sha256": "8b8ee93007dd7fa0e45b6c320d762362e4141c4317dc70e1b6a55b44224af574"
+      },
+      {
+        "name": "cms_metrics.json",
+        "lines": 178,
+        "entries": 16,
+        "bytes": 778404,
+        "sha256": "a916fe6762151b505ca73a9c43a8bfbecbe0259bd9f1535acaf21330927b30c7"
+      },
+      {
+        "name": "sls_ingress_logs.jsonl",
+        "lines": 11939,
+        "entries": 11939,
+        "bytes": 8492595,
+        "sha256": "b5e421bc881a3200d233f436ea708ee899fbff64e64324595925097fe72cc3b5"
+      },
+      {
+        "name": "sls_k8s_events.jsonl",
+        "lines": 40,
+        "entries": 40,
+        "bytes": 21386,
+        "sha256": "576b634f114cbadc2499d2854b9add00c2ce2122ae3e1c1b223f76981c1d4cb9"
+      },
+      {
+        "name": "sls_app_logs.jsonl",
+        "lines": 395,
+        "entries": 395,
+        "bytes": 88464,
+        "sha256": "a5c392fe64af7eb13bcc12662b49511526c137e6889a0f3cd85d477548031f77"
+      },
+      {
+        "name": "sls_rds_slowlog.jsonl",
+        "lines": 50,
+        "entries": 50,
+        "bytes": 21360,
+        "sha256": "094d53aa95c6d1453a5ee83e11662a6febcd438d895fa385e5122e1b1185afad"
+      },
+      {
+        "name": "sls_trace_spans.jsonl",
+        "lines": 9246,
+        "entries": 9246,
+        "bytes": 9158193,
+        "sha256": "885a2953b8bcf7e828af5bbd77faa9450d7e3ab167cc538092b9825977f8ff5b"
+      }
+    ]
+  },
+  "risk_ground_truth": [
+    {
+      "rule_id": "HA-001",
+      "title": "payment-service 单可用区部署（3 副本全在 cn-hangzhou-h）",
+      "severity": "P1",
+      "resource_kind": "Deployment",
+      "resource_ref": "default/payment-service",
+      "evidence_files": [
+        "k8s_resources.json"
+      ],
+      "how_to_verify": "读 k8s_resources.json：payment-service 3 个 Pod 的 nodeName join 节点 zone 标签，zone 集合应为 {cn-hangzhou-h}",
+      "expected": "Pod 分布的 zone 数 == 1（根因：nodeAffinity 钉死 cn-hangzhou-h），应分散到 >= 2 个可用区",
+      "measured": "3 Pod 全在 cn-hangzhou-h（zone 数=1）"
+    },
+    {
+      "rule_id": "HA-002",
+      "title": "order-service 单副本运行",
+      "severity": "P1",
+      "resource_kind": "Deployment",
+      "resource_ref": "default/order-service",
+      "evidence_files": [
+        "k8s_resources.json"
+      ],
+      "how_to_verify": "读 k8s_resources.json：order-service Deployment 的 spec.replicas 应为 1",
+      "expected": "spec.replicas == 1，应设置 replicas >= 2",
+      "measured": "spec.replicas=1"
+    },
+    {
+      "rule_id": "HA-003",
+      "title": "user-service 缺失存活/就绪探针",
+      "severity": "P2",
+      "resource_kind": "Deployment",
+      "resource_ref": "default/user-service",
+      "evidence_files": [
+        "k8s_resources.json"
+      ],
+      "how_to_verify": "读 k8s_resources.json：user-service 容器 spec 应同时缺失 livenessProbe/readinessProbe 键",
+      "expected": "containers[0] 无 livenessProbe 且无 readinessProbe 键，应补全双探针",
+      "measured": "livenessProbe/readinessProbe 键均缺失"
+    },
+    {
+      "rule_id": "HA-004",
+      "title": "frontend 缺失 PodDisruptionBudget",
+      "severity": "P2",
+      "resource_kind": "Deployment",
+      "resource_ref": "default/frontend",
+      "evidence_files": [
+        "k8s_resources.json"
+      ],
+      "how_to_verify": "读 k8s_resources.json：default ns 的 PDB selector 列表中不应出现 app=frontend",
+      "expected": "default ns 中不存在 selector 命中 app=frontend 的 PDB，应创建 minAvailable >= 1 的 PDB",
+      "measured": "default ns PDB 仅覆盖 ['api-gateway', 'order-service', 'payment-service', 'user-service']，无 frontend"
+    },
+    {
+      "rule_id": "CAP-001",
+      "title": "api-gateway 缺失 CPU request",
+      "severity": "P1",
+      "resource_kind": "Deployment",
+      "resource_ref": "default/api-gateway",
+      "evidence_files": [
+        "k8s_resources.json"
+      ],
+      "how_to_verify": "读 k8s_resources.json：api-gateway 容器 resources.requests 应无 cpu 键",
+      "expected": "containers[0].resources.requests 无 cpu 键，调度器无法为其预留算力",
+      "measured": "requests 键=['memory']（无 cpu）"
+    },
+    {
+      "rule_id": "CAP-002",
+      "title": "payment-service 缺失内存 limit",
+      "severity": "P2",
+      "resource_kind": "Deployment",
+      "resource_ref": "default/payment-service",
+      "evidence_files": [
+        "k8s_resources.json"
+      ],
+      "how_to_verify": "读 k8s_resources.json：payment-service 容器 resources.limits 应无 memory 键",
+      "expected": "containers[0].resources.limits 无 memory 键，内存失控会拖垮节点",
+      "measured": "limits 键=['cpu']（无 memory）"
+    },
+    {
+      "rule_id": "CAP-003",
+      "title": "default 命名空间 CPU 超卖率 168%（阈值 150%）",
+      "severity": "P1",
+      "resource_kind": "Namespace",
+      "resource_ref": "default",
+      "evidence_files": [
+        "k8s_resources.json"
+      ],
+      "how_to_verify": "读 cms_metrics.json：namespace.cpu.oversale_rate 全部数据点 Average 求均值，应 > 150%",
+      "expected": "Σ(default ns Pod cpu limit) / Σ(节点 allocatable cpu) = 39300m / 23400m ≈ 167.95% > 150%",
+      "measured": "namespace.cpu.oversale_rate 均值=167.94% > 150%"
+    },
+    {
+      "rule_id": "CAP-004",
+      "title": "rds-mysql-01 内存使用率常态 87%",
+      "severity": "P2",
+      "resource_kind": "RDSInstance",
+      "resource_ref": "rds-mysql-01",
+      "evidence_files": [
+        "cms_metrics.json"
+      ],
+      "how_to_verify": "读 cms_metrics.json：acs_rds_dashboard/MemoryUsage 的 Average 均值应 > 85%",
+      "expected": "MemoryUsage 基线 87%，全窗口 > 85%，buffer pool 无扩展余量",
+      "measured": "MemoryUsage 均值=86.97% > 85%"
+    },
+    {
+      "rule_id": "DB-001",
+      "title": "rds-mysql-01 连接使用率常态 82%",
+      "severity": "P1",
+      "resource_kind": "RDSInstance",
+      "resource_ref": "rds-mysql-01",
+      "evidence_files": [
+        "cms_metrics.json",
+        "sls_app_logs.jsonl"
+      ],
+      "how_to_verify": "读 cms_metrics.json：acs_rds_dashboard/ConnectionUsage 的 Average 均值应 > 80%",
+      "expected": "ConnectionUsage 基线 82%，全窗口 > 80%；应用日志同步出现 \"Too many connections\" 报错",
+      "measured": "ConnectionUsage 均值=81.9% > 80%；应用日志 15 条 \"Too many connections\" ERROR 同步印证"
+    },
+    {
+      "rule_id": "DB-002",
+      "title": "rds-mysql-01 存在无索引慢查询（orders 表全表扫描）",
+      "severity": "P2",
+      "resource_kind": "RDSInstance",
+      "resource_ref": "rds-mysql-01",
+      "evidence_files": [
+        "sls_rds_slowlog.jsonl",
+        "sls_trace_spans.jsonl",
+        "sls_app_logs.jsonl"
+      ],
+      "how_to_verify": "读 sls_rds_slowlog.jsonl：行数 >= 30 且各行 rows_examined >= 100 万、rows_sent < 10",
+      "expected": "慢日志中 3 条 SQL 的 rows_examined 均 > 100 万且 rows_sent < 10，应为 orders(status, created_at) 建复合索引",
+      "measured": "50 行慢日志，rows_examined 最小值=1162951（均 >= 100 万）；3 条慢 SQL 原文同时存在于 slowlog / Trace db.statement / 应用日志 WARN"
+    },
+    {
+      "rule_id": "API-001",
+      "title": "POST /api/orders P99 达 1.2s 且错误率 1.8%",
+      "severity": "P1",
+      "resource_kind": "API",
+      "resource_ref": "POST /api/orders",
+      "evidence_files": [
+        "sls_ingress_logs.jsonl",
+        "sls_trace_spans.jsonl",
+        "sls_app_logs.jsonl"
+      ],
+      "how_to_verify": "读 sls_ingress_logs.jsonl：POST /api/orders 的 request_time P99 与 5xx 占比；再用 sls_trace_spans.jsonl 根 span 复核",
+      "expected": "p99_ms == 1200、error_rate == 0.018；Trace 中 mysql span 命中慢查询，错误请求含 \"SQLTimeoutException: Statement cancelled due to timeout\"",
+      "measured": "Ingress 实测 P99=1.244s、错误率=1.78%；Trace 根 span P99=1.244s"
+    }
+  ],
+  "topology_ground_truth": {
+    "cluster": "prod-cluster-01",
+    "time_range": {
+      "from": 1785756001,
+      "to": 1785757799
+    },
+    "algorithm": "trace",
+    "nodes": [
+      {
+        "id": "nginx-ingress",
+        "namespace": "kube-system",
+        "workload": "Deployment/nginx-ingress",
+        "replicas": 2
+      },
+      {
+        "id": "frontend",
+        "namespace": "default",
+        "workload": "Deployment/frontend",
+        "replicas": 2
+      },
+      {
+        "id": "api-gateway",
+        "namespace": "default",
+        "workload": "Deployment/api-gateway",
+        "replicas": 2
+      },
+      {
+        "id": "user-service",
+        "namespace": "default",
+        "workload": "Deployment/user-service",
+        "replicas": 2
+      },
+      {
+        "id": "order-service",
+        "namespace": "default",
+        "workload": "Deployment/order-service",
+        "replicas": 1
+      },
+      {
+        "id": "payment-service",
+        "namespace": "default",
+        "workload": "Deployment/payment-service",
+        "replicas": 3
+      },
+      {
+        "id": "rds-mysql-01",
+        "namespace": null,
+        "workload": "rds_mysql/rds-mysql-01",
+        "replicas": 1
+      },
+      {
+        "id": "kvstore-redis-01",
+        "namespace": null,
+        "workload": "kvstore_redis/kvstore-redis-01",
+        "replicas": 1
+      }
+    ],
+    "edges": [
+      {
+        "source": "nginx-ingress",
+        "target": "frontend",
+        "call_count": 1216,
+        "error_rate": 0.0074,
+        "avg_latency_ms": 99.2,
+        "p99_latency_ms": 641.6,
+        "confidence": 1.0
+      },
+      {
+        "source": "frontend",
+        "target": "api-gateway",
+        "call_count": 981,
+        "error_rate": 0.0092,
+        "avg_latency_ms": 105.0,
+        "p99_latency_ms": 594.5,
+        "confidence": 1.0
+      },
+      {
+        "source": "api-gateway",
+        "target": "user-service",
+        "call_count": 383,
+        "error_rate": 0.0026,
+        "avg_latency_ms": 43.7,
+        "p99_latency_ms": 157.6,
+        "confidence": 1.0
+      },
+      {
+        "source": "api-gateway",
+        "target": "order-service",
+        "call_count": 414,
+        "error_rate": 0.0193,
+        "avg_latency_ms": 153.3,
+        "p99_latency_ms": 661.8,
+        "confidence": 1.0
+      },
+      {
+        "source": "api-gateway",
+        "target": "payment-service",
+        "call_count": 184,
+        "error_rate": 0.0,
+        "avg_latency_ms": 64.3,
+        "p99_latency_ms": 286.1,
+        "confidence": 1.0
+      },
+      {
+        "source": "order-service",
+        "target": "payment-service",
+        "call_count": 231,
+        "error_rate": 0.0,
+        "avg_latency_ms": 180.2,
+        "p99_latency_ms": 585.5,
+        "confidence": 1.0
+      },
+      {
+        "source": "user-service",
+        "target": "rds-mysql-01",
+        "call_count": 383,
+        "error_rate": 0.0026,
+        "avg_latency_ms": 9.7,
+        "p99_latency_ms": 17.8,
+        "confidence": 1.0
+      },
+      {
+        "source": "order-service",
+        "target": "rds-mysql-01",
+        "call_count": 414,
+        "error_rate": 0.0193,
+        "avg_latency_ms": 17.8,
+        "p99_latency_ms": 18.0,
+        "confidence": 1.0
+      },
+      {
+        "source": "payment-service",
+        "target": "kvstore-redis-01",
+        "call_count": 415,
+        "error_rate": 0.0,
+        "avg_latency_ms": 1.4,
+        "p99_latency_ms": 2.5,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "api_baseline": [
+    {
+      "method": "GET",
+      "path": "/api/users",
+      "backend": "user-service",
+      "qps": 1.5,
+      "expected_error_rate": 0.002,
+      "expected_p99_ms": 180,
+      "measured_error_rate": 0.0018,
+      "measured_p99_ms": 175.0
+    },
+    {
+      "method": "POST",
+      "path": "/api/users/login",
+      "backend": "user-service",
+      "qps": 0.6,
+      "expected_error_rate": 0.005,
+      "expected_p99_ms": 250,
+      "measured_error_rate": 0.0047,
+      "measured_p99_ms": 291.0
+    },
+    {
+      "method": "GET",
+      "path": "/api/orders",
+      "backend": "order-service",
+      "qps": 1.0,
+      "expected_error_rate": 0.004,
+      "expected_p99_ms": 300,
+      "measured_error_rate": 0.0039,
+      "measured_p99_ms": 300.0
+    },
+    {
+      "method": "POST",
+      "path": "/api/orders",
+      "backend": "order-service",
+      "qps": 1.0,
+      "expected_error_rate": 0.018,
+      "expected_p99_ms": 1200,
+      "measured_error_rate": 0.0178,
+      "measured_p99_ms": 1244.0
+    },
+    {
+      "method": "POST",
+      "path": "/api/orders/cancel",
+      "backend": "order-service",
+      "qps": 0.3,
+      "expected_error_rate": 0.005,
+      "expected_p99_ms": 350,
+      "measured_error_rate": 0.0053,
+      "measured_p99_ms": 349.0
+    },
+    {
+      "method": "POST",
+      "path": "/api/pay",
+      "backend": "payment-service",
+      "qps": 0.5,
+      "expected_error_rate": 0.006,
+      "expected_p99_ms": 400,
+      "measured_error_rate": 0.0057,
+      "measured_p99_ms": 390.0
+    },
+    {
+      "method": "GET",
+      "path": "/api/pay/status",
+      "backend": "payment-service",
+      "qps": 0.5,
+      "expected_error_rate": 0.003,
+      "expected_p99_ms": 150,
+      "measured_error_rate": 0.0034,
+      "measured_p99_ms": 158.0
+    },
+    {
+      "method": "GET",
+      "path": "/api/products",
+      "backend": "frontend",
+      "qps": 1.2,
+      "expected_error_rate": 0.001,
+      "expected_p99_ms": 80,
+      "measured_error_rate": 0.0009,
+      "measured_p99_ms": 84.0
+    }
+  ]
+}

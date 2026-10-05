@@ -1,0 +1,115 @@
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  padding: 14px 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.statusText {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.chatArea {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 12px;
+}
+
+.welcome {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.welcomeTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.quickies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.quickTag {
+  cursor: pointer;
+}
+
+/* 输入框上方的工具条：运行模式切换 + 本轮用量 */
+.toolBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0 0;
+  flex-wrap: wrap;
+}
+
+.usage {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-tertiary, #86909c);
+  font-variant-numeric: tabular-nums;
+}
+
+.inputBar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0 16px;
+}
+
+.tabs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.tabs :global(.ant-tabs-content-holder) {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* 只对激活面板开 flex：若用 .ant-tabs-tabpane 全量覆盖，会压过 antd 的
+   .ant-tabs-tabpane-hidden { display: none }，非激活面板继续占位，切 Tab 后旧内容仍可见 */
+.tabs :global(.ant-tabs-content) {
+  height: 100%;
+}
+
+.tabs :global(.ant-tabs-tabpane-active) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.consoleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 16px;
+}

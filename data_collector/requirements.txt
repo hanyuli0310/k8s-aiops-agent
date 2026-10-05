@@ -1,0 +1,5 @@
+httpx>=0.27
+sqlalchemy>=2.0
+pymysql>=1.1
+cryptography>=42.0
+python-dotenv>=1.0

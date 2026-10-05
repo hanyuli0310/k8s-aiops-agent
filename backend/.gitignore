@@ -1,0 +1,5 @@
+.env
+aiops.db
+.venv/
+__pycache__/
+.tool_results/

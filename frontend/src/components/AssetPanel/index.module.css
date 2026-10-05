@@ -1,0 +1,123 @@
+.section {
+  background: var(--bg-white, #ffffff);
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary, #4e5969);
+}
+
+.head {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-weight: 400;
+  width: 100%;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-color, #1664ff);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--text-tertiary, #86909c);
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.skillBody {
+  font-size: 13px;
+  color: var(--text-primary, #1d2129);
+}
+
+.when {
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+  margin-bottom: 6px;
+}
+
+.toolLine {
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+  margin-bottom: 6px;
+  line-height: 2;
+}
+
+.markdown {
+  font-size: 13px;
+  line-height: 1.7;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.markdown :global(h1),
+.markdown :global(h2),
+.markdown :global(h3) {
+  font-size: 14px;
+  margin: 10px 0 6px;
+}
+
+.markdown :global(table) {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.markdown :global(th),
+.markdown :global(td) {
+  border: 1px solid var(--border-color, #e5e6eb);
+  padding: 4px 8px;
+}
+
+.markdown :global(code) {
+  background: var(--bg-code, #eef1f6);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.markdown :global(pre) {
+  background: var(--bg-code, #eef1f6);
+  padding: 8px 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.agentList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.agentRow {
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.agentDesc {
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+  margin: 6px 0;
+}

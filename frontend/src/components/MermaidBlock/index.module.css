@@ -1,0 +1,31 @@
+.wrap {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.wrap :global(svg) {
+  max-width: 100%;
+  height: auto;
+}
+
+.fallback {
+  background: var(--bg-code, #f2f3f5);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  text-align: left;
+  white-space: pre-wrap;
+  color: var(--text-secondary, #4e5969);
+}
+
+.errorTip {
+  font-size: 11px;
+  color: var(--text-tertiary, #86909c);
+  margin-bottom: 6px;
+  text-align: left;
+}

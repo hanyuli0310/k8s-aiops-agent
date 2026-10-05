@@ -1,0 +1,23 @@
+:root {
+  --brand-color: #1664ff;
+  --text-primary: #1d2129;
+  --text-secondary: #4e5969;
+  --text-tertiary: #86909c;
+  --border-color: #e5e6eb;
+  --bg-subtle: #f7f8fa;
+  --bg-code: #f2f3f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Roboto, sans-serif;
+  background: #eef1f6;
+}

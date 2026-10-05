@@ -1,0 +1,105 @@
+.card {
+  border: 1px solid var(--warning-border, #ffd591);
+  background: var(--warning-bg, #fffbe6);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardExpiring {
+  border-color: var(--danger-border, #ffa39e);
+  background: var(--danger-bg, #fff1f0);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+}
+
+.iconDanger {
+  color: var(--danger-color, #f5222d);
+}
+
+.iconNormal {
+  color: var(--primary-color, #1677ff);
+}
+
+.countdown {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+  font-variant-numeric: tabular-nums;
+}
+
+.summary {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+  word-break: break-all;
+}
+
+.args {
+  border: 1px solid var(--bg-subtle, #f2f3f5);
+  background: var(--bg-white, #ffffff);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.argRow {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.argKey {
+  color: var(--text-secondary, #4e5969);
+  min-width: 92px;
+  flex-shrink: 0;
+}
+
+.argVal {
+  color: var(--text-primary, #1d2129);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  word-break: break-all;
+}
+
+.toolLine {
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+}
+
+.toolName {
+  font-size: 12px;
+  background: var(--bg-subtle, #f2f3f5);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}

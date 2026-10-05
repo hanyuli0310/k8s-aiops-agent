@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.title {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+  border-bottom: 1px solid var(--border-color, #e5e6eb);
+}
+
+.canvas {
+  width: 100%;
+}

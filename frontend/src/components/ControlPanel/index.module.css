@@ -1,0 +1,30 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section {
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actionLog {
+  font-size: 12px;
+  color: var(--text-secondary, #4e5969);
+  line-height: 1.9;
+  max-height: 150px;
+  overflow-y: auto;
+}

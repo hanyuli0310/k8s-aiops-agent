@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: aiops-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: aiops123
+      MYSQL_DATABASE: aiops
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - aiops_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-paiops123"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  aiops_mysql_data:

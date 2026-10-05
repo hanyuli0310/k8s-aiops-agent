@@ -1,0 +1,47 @@
+# GitLab CI —— 目前【未经 runner 验证】。
+#
+# 为什么标"未验证"：remote 是内部 GitLab，当前仓库权限
+# 尚未恢复，也不确定有没有可用的 shared runner。写在这里是为了权限恢复后能直接用，
+# 但在第一次真正跑通之前，不要声称 CI 已经生效 ——
+# 真正可依赖的是 `bash scripts/run_tests.sh`，它不依赖任何平台。
+#
+# 跑通后请删掉本段"未验证"说明，并在文档中标注 CI 已接入。
+#
+# 前置条件（runner 上必须满足，否则会 fail 在 before_script）：
+#   · Python 3.9+ 且能建 venv
+#   · 装依赖需要能访问 pypi（内网 runner 可能要配镜像源）
+#   · 前端校验需要 node + 内部 npm 镜像；装不上时 run_tests.sh 会自动跳过前端，
+#     不会把整个 pipeline 拖红 —— 这是刻意的：后端 199 项的价值远大于前端两条校验。
+
+stages:
+  - test
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  # 兜底：即使 runner 环境里塞了 DB_* 变量，也强制测试连本地 sqlite。
+  # run_tests.sh 的隔离自检 + 各测试文件内部的运行时闸门是主防线，这里是第三道。
+  DATABASE_URL: "sqlite:////tmp/ci_aiops.db"
+  DB_URL: "sqlite:////tmp/ci_aiops.db"
+  DATA_SOURCE: "live"
+
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .cache/pip
+    - backend/.venv
+    - frontend/node_modules
+
+test:
+  stage: test
+  image: python:3.11
+  before_script:
+    - python -V
+    - test -d backend/.venv || python -m venv backend/.venv
+    - backend/.venv/bin/pip install -q -r backend/requirements.txt
+        -r mock_server/requirements.txt -r data_collector/requirements.txt
+  script:
+    # 无 node 环境时用 --no-frontend；有 node 的 runner 上去掉这个参数即可
+    - bash scripts/run_tests.sh --no-frontend
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH

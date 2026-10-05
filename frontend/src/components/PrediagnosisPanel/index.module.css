@@ -1,0 +1,87 @@
+.section {
+  background: var(--bg-white, #ffffff);
+  border: 1px solid var(--border-color, #e5e6eb);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1d2129);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary, #4e5969);
+}
+
+.refresh {
+  margin-left: auto;
+}
+
+.head {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-weight: 400;
+}
+
+.rule {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brand-color, #1664ff);
+}
+
+.ref {
+  font-size: 12px;
+  color: var(--text-primary, #1d2129);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  word-break: break-all;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--text-tertiary, #86909c);
+  font-variant-numeric: tabular-nums;
+}
+
+.body {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-primary, #1d2129);
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.body :global(h1),
+.body :global(h2),
+.body :global(h3) {
+  font-size: 14px;
+  margin: 10px 0 6px;
+}
+
+.body :global(table) {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.body :global(th),
+.body :global(td) {
+  border: 1px solid var(--border-color, #e5e6eb);
+  padding: 4px 8px;
+}
+
+.body :global(code) {
+  background: var(--bg-code, #eef1f6);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
